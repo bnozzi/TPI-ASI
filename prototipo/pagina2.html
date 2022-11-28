@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset ="utf-8" />
+        <title>Inscripcion a la Academia</title>
+        <link rel="stylesheet" type="text/css" href="estilo-2.css">
+        <script src="script.js"></script>
+    </head>
+    <body onload="setDateTime()">
+
+
+
+        <header class="header">
+            <div class="container-header">
+                <div class="btn-menu">
+                    <label for="btn-menu" class="btn-menu">
+                        <img src="assets/menu.svg"> 
+                    </label>
+                </div>
+                    <div class="logo">
+                        <h1>Spartans</h1>
+                    </div>
+            </div>
+        
+        </header>
+
+        <input type="checkbox" id="btn-menu"> 
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="pagina3.html">Cobro</a>
+                    <a href="#">Torneos</a>
+                    
+                    <a href="#">Cancelacion</a>
+                </nav>
+                <label for="btn-menu" class="icon-equis">
+                    <img src="assets/equis.svg">
+                </label>
+            </div>
+        </div>
+
+        <div class="titulo">
+            <h1>
+                Inscripcion a la Academia
+            </h1>    
+        </div>
+        <div class="container">
+            <section>
+                <label id="DateTime">
+                </label>
+            </section>
+
+            <section id="categoriayhorarios" class="d-flex flex-column  ">
+                <h3>Seleccionar Categoria</h3>
+                <select id="cantidad" onchange="changeCategoria()">
+                    <option value=0>Principiante (0 a 1 años de entrenamiento)</option>
+                    <option value=1>Intermedio (1 a 3 años de entrenamiento)</option>
+                    <option value=2>Avanzado (3 años en adelante de entrenamiento)</option>
+                </select>
+                <br>
+                <button onclick="Categoria()" id="checkTurno">Consultar Turnos</button>
+
+                <p id="categoria-e"></p>
+
+
+                <div id="horariosPrincipiantes">
+                    <select id="HP">
+                        <option value="1">Lunes y Miercoles de 9 a 10 hs</option>
+                        <option value="2">Martes y Jueves de 10 a 11 hs</option>
+                    </select>
+                </div>
+
+                <div id="horariosIntermedios">
+                    <select id="HI">
+                        <option value="3">Lunes y Miercoles de 10 a 11 hs</option>
+                        <option value="4">Martes y Jueves de 9 a 10 hs</option>
+                    </select>
+                </div>
+
+                <div id="horariosAvanzados">
+                    <select id="HA">
+                        <option value="5">Lunes y Miercoles de 19 a 20 hs</option>
+                        <option value="6">Miercoles y Viernes de 20 a 21 hs</option>
+                    </select>
+                </div>
+
+                <button onclick="verificarCupo();habilitarDatos()" id="botoncupo">Verificar Disponiblidad Cupo</button>
+
+                <p id="a">El precio de inscripcion es 1500</p>
+
+                <p id="disponibilidad"></p>
+
+        
+                <section id="datos">
+                    <!-- add on submit in form -->
+                    <form action=""  id="formInscripcion" onsubmit="guardarDatos()">
+                    <div class="dato">
+                        <label for="doc">Documento</label><br>
+                        <input type="number" id="doc" onblur="checkDNI()" required><br>
+                    </div>
+
+                    <div class="dato">
+                        <label for="nombre">Nombre</label><br>
+                        <input type="text" id="nombre" required><br>
+                    </div>
+        
+                    <div class="dato">
+                        <label for="apellido">Apellido</label><br>
+                        <input type="text" id="apellido" required><br>
+                    </div>
+        
+        
+                    <div class="dato">  
+                        <label for="edad">Edad</label><br>
+                        <input type="number" id="edad" required><br>
+                    </div>
+        
+        
+                    <div class="dato">
+                        <label for="mail">Mail</label><br>
+                        <input type="email" id="mail" required><br>
+                    </div>
+        
+                    <div class="dato">
+                        <label for="telefono">Celular</label><br>
+                        <input type="number" id="telefono" required><br>
+                    </div>
+        
+                    <div class="dato">
+                        <label for="contactoMedico">Contacto Medico</label><br>
+                        <input type="text" id="contactoMedico" required><br>
+                    </div>
+                    
+                    <!-- rm onclick  -->
+
+                    <button type="submit"  id="guardar">Guardar</button>
+                    
+                </form>
+                </section>
+    
+            </section>
+
+            <section id="validacion" class="">
+                <section id="verificarInscripcion">
+                    <h3>Validar Documentacion</h3>
+                    <label for="verif">Ingrese el numero de documento del deportista</label> <br>
+                    <input type="number" id="verif"><br>
+                    <button onclick="verificar()" id="verificar">Verificar</button>
+                </section>
+
+                <p id="identificador" ></p>
+                <section id="validarDocumentacion">
+                    <form action="" id="documentacion" onsubmit="cambiarEstado()">
+                        <label for=""> Ficha Medica</label>
+                        <input type="checkbox" name="" id="" required> <br>
+                        
+                    </form>
+                    <button type="submit"  form="documentacion" > Validar</button>
+                    
+                </section>
+            </section>
+        </div>
+
+
+
+        <button onclick="setearCupos()" id="Setear">Setear Cupos</button>
+
+
+    </body>
+</html>

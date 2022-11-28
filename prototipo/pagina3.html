@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset ="utf-8" />
+        <title>Cobro de Cuota</title>
+        <link rel="stylesheet" type="text/css" href="estilos3.css">
+        <script src="script3.js"></script>
+        
+    </head>
+    <body>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
+
+
+
+        <header class="header">
+            <div class="container-header">
+                <div class="btn-menu">
+                    <label for="btn-menu" class="btn-menu">
+                        <img src="assets/menu.svg"> 
+                    </label>
+                </div>
+                    <div class="logo">
+                        <h1>Spartans</h1>
+                    </div>
+            </div>
+        
+        </header>
+
+        <input type="checkbox" id="btn-menu"> 
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="pagina2.html">Inscripcion</a>
+                    <a href="#">Torneos</a>
+                    
+                    <a href="#">Cancelacion</a>
+                </nav>
+                <label for="btn-menu" class="icon-equis">
+                    <img src="assets/equis.svg">
+                </label>
+            </div>
+        </div>
+
+        <div class="titulo">
+            <h1>
+                Registrar Cobro 
+            </h1>    
+        </div>
+
+        <section id="verificacion">
+            <label for="verif">Ingrese el numero de documento del deportista</label> <br>
+            <input type="number" id="verif"><br>
+            <button onclick="verificarDNI()" > Verificar</button>
+
+
+        </section>
+
+        <section id="inscripcion-asociada">
+            <p id="estado"></p>
+        </section>
+        
+
+
+        <div id="cobro">
+            <p id="monto"></p>
+            <table id="tabla" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>cuota</th>
+                        <th>Precio unitario</th>
+                        <th>Seleccionar</th>
+                        <th>total</th>
+                    </tr>
+                    
+                </thead>
+                <tbody id="bodyTable">
+                <!-- cuotas -->
+                </tbody>
+
+
+            </table>
+            <label for="metodo">¿Con que metodo se va a realizar el cobro?</label><br>
+            <select id="metodo">
+                <option value="0">Tarjeta de Debito</option>
+                <option value="1">Efectivo</option>
+                <option value="2">Transferencia Bancaria</option>
+            </select>
+            <p>Presione para realizar el cobro</p>
+            <button onclick="realizarCobro()" id="realizarCobro">Cobrar</button>
+        </div>
+
+
+    <script src="script3.js"></script>
+    </body>
+
+</html>
